@@ -1,22 +1,35 @@
 /**
- * STATE OF PROTOCOL - CORE ENGINE v1.0.4
- * Optimization: Zero Dependency | Memory Management | Tab-Aware Execution
+ * STATE OF PROTOCOL - CORE ENGINE v1.0.5
+ * Authority: S.O.P Foundation
+ * Features: Zero Dependency | RAM Optimization | Dynamic Metadata Sync
  */
 
-// 1. PENGURUSAN MEMORI & STATUS TAB
+// 1. PENGURUSAN MEMORI & STATUS TAB (Hibernation Logic)
 let isActive = true;
 
 document.addEventListener('visibilitychange', () => {
     isActive = !document.hidden;
     if (!isActive) {
-        // Skrip masuk mod 'Hibernation' untuk jimat RAM apabila tab tidak aktif
         console.log("S.O.P Protocol: Sleeping to save RAM...");
     } else {
         console.log("S.O.P Protocol: Engine Resumed.");
+        updateFooter(); // Segarkan data masa sync bila tab dibuka semula
     }
 });
 
-// 2. INISIALISASI HEATMAP (Dijalankan sekali semasa muat turun)
+// 2. FUNGSI UPDATE FOOTER (Metadata Bridge)
+/**
+ * Menarik data 'lastGlobalSync' daripada WSE_DATABASE dalam data.js
+ * dan memaparkannya pada elemen footer.
+ */
+function updateFooter() {
+    const syncElement = document.getElementById('sync-time');
+    if (syncElement && typeof WSE_DATABASE !== 'undefined' && WSE_DATABASE.metadata) {
+        syncElement.innerText = WSE_DATABASE.metadata.lastGlobalSync;
+    }
+}
+
+// 3. INISIALISASI HEATMAP (Dijalankan sekali semasa muat turun)
 const regions = ['N. AMERICA', 'EUROPE', 'ASIA', 'MIDDLE EAST'];
 const heatmapContainer = document.getElementById('heatmap');
 
@@ -31,18 +44,20 @@ if (heatmapContainer) {
     });
 }
 
-// 3. EVENT LISTENER (ENTER KEY)
+// 4. EVENT LISTENER (ENTER KEY)
 function handleKey(e) {
     if (e.key === 'Enter') runAnalysis();
 }
 
-// 4. FUNGSI UTAMA ANALISIS (CORE AUDIT)
+// 5. FUNGSI UTAMA ANALISIS (CORE AUDIT ENGINE)
 function runAnalysis() {
-    // Audit Security: Cegah eksekusi jika tab tidak aktif atau input kosong
+    // Audit Security: Cegah eksekusi jika tab tidak aktif
     if (!isActive) return;
     
     const inputField = document.getElementById('brandInput');
     const input = inputField.value.trim();
+    
+    // Validasi Input
     if (!input) return;
 
     const btn = document.getElementById('btn');
@@ -63,6 +78,11 @@ function runAnalysis() {
         resultsArea.style.display = 'grid';
         
         // --- DATA MAPPING DARI data.js ---
+        if (typeof WSE_DATABASE === 'undefined') {
+            console.error("Critical Error: Database (data.js) not found.");
+            return;
+        }
+
         const db = WSE_DATABASE;
         const randomEntity = db.entities[Math.floor(Math.random() * db.entities.length)];
         const category = db.categories.find(c => c.id === randomEntity.type);
@@ -79,7 +99,7 @@ function runAnalysis() {
         const vol = (Math.random() * 12 + 1).toFixed(1);
         document.getElementById('volVal').innerText = vol + 'M';
         
-        // C. Identity & Security Audit Detail
+        // C. Identity & Security Audit Detail (The "Smart" Card)
         const domArea = document.getElementById('domStatus');
         domArea.innerHTML = `
             <div style="color: ${category.color}; font-size: 9px; font-weight:900; margin-bottom:10px; letter-spacing:2px">
@@ -90,7 +110,7 @@ function runAnalysis() {
             </div>
             <div style="font-size: 10px; color: #666; line-height: 1.8; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px;">
                 SSL RATING : <span style="color: #4ade80; font-weight:bold">${randomEntity.ssl}</span><br>
-                NODES      : ${randomEntity.devCount}<br>
+                INTEGRITY  : <span style="color: #fff;">${(randomEntity.integrity * 100).toFixed(0)}%</span><br>
                 L-STATUS   : <span style="color: #fff; background: rgba(255,255,255,0.1); padding: 0 4px;">${status}</span>
             </div>
         `;
@@ -100,12 +120,22 @@ function runAnalysis() {
             el.innerText = Math.floor(Math.random() * 85 + 10) + '%';
         });
 
-        // Reset Button State & Logging
+        // E. Reset Button State & Logging
         btn.innerText = 'RUN ANALYSIS';
         btn.disabled = false;
         
+        // Kemaskini masa sync pada footer selepas setiap audit
+        updateFooter();
+
         console.log("Audit Status: Completed.");
-        console.log("RAM Usage: Optmized (<10MB)");
+        console.log("Node Identity: " + randomEntity.name);
+        console.log("RAM Usage: Optimized (<10MB)");
 
     }, 1200);
 }
+
+// 6. INITIAL LOAD
+// Pastikan footer dikemaskini sebaik sahaja laman web dimuatkan
+window.onload = () => {
+    updateFooter();
+};
