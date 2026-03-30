@@ -1,17 +1,18 @@
 /* 
- * STATE OF PROTOCOL - FOUNDATION STYLESHEET v1.0.6
- * Optimization: Fluid Typography | Zero Bloat | Multi-Device Adaptive
- * Feature: Premium Scroll Reveal (Blur & Organic Motion)
+ * STATE OF PROTOCOL - FOUNDATION STYLESHEET v1.1.0
+ * Authority: S.O.P Foundation
+ * Optimization: Fluid Typography | Zero Bloat | Modal Authentication UI
  */
 
 :root {
     /* Warna Institutional (High-Value Slate & Silver) */
     --bg: #050505;
     --card: #0a0a0a;
-    --accent: #ffffff;    
+    --accent: #00ff41;    /* Matrix/Auth Green */
     --gold: #d4af37;      
     --text: #f0f0f0;
     --dim: #666;
+    --error: #ff4444;
     --border: rgba(255, 255, 255, 0.08);
     --hover-bg: rgba(255, 255, 255, 0.03);
 }
@@ -42,9 +43,9 @@ body {
 /* Typography Utility */
 .dim { color: var(--dim); }
 .gold { color: var(--gold); }
-.white { color: var(--accent); }
+.accent { color: var(--accent); }
 
-/* Navigation Area - Sticky Fluid */
+/* Navigation Area */
 .navbar {
     padding: clamp(15px, 3vh, 25px) 5%;
     border-bottom: 1px solid var(--border);
@@ -73,7 +74,7 @@ body {
     box-shadow: 0 0 12px var(--accent);
 }
 
-/* Main Layout - Fluid Container */
+/* Main Layout */
 .container { 
     width: 90%;
     max-width: 1100px; 
@@ -81,14 +82,14 @@ body {
     padding: clamp(40px, 10vh, 80px) 0;
 }
 
-/* Hero Section - Clamp-based Typography */
+/* Hero Section */
 .hero h1 {
     font-size: clamp(2.2rem, 9vw, 4.5rem);
     font-weight: 800;
     line-height: 0.85;
     letter-spacing: -0.05em;
     margin-bottom: 25px;
-    color: var(--accent);
+    color: white;
 }
 
 .subtitle { 
@@ -96,10 +97,9 @@ body {
     max-width: 500px; 
     margin-bottom: 50px; 
     font-size: clamp(12px, 2vw, 14px);
-    letter-spacing: -0.2px;
 }
 
-/* Search Engine UI - Flex Wrap Adaptive */
+/* Search/Auth Box */
 .search-box {
     display: flex;
     flex-wrap: wrap;
@@ -126,7 +126,7 @@ input:focus { border-color: var(--accent); background: var(--hover-bg); }
 button {
     flex: 1;
     min-width: 180px;
-    background: var(--accent);
+    background: white;
     color: black;
     border: none;
     padding: 20px 40px;
@@ -137,117 +137,136 @@ button {
     transition: all 0.2s ease;
 }
 
-button:hover { background: var(--gold); transform: translateY(-1px); }
-button:disabled { background: var(--dim); cursor: not-allowed; }
+button:hover { background: var(--accent); transform: translateY(-1px); }
 
-/* Results Architecture - Responsive Grid */
-.results-grid {
+/* Acquisition Cards (New Feature) */
+.acquisition-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(10px, 2vw, 20px);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
 }
 
-.card {
-    background: var(--card);
+.acquisition-card {
+    background: linear-gradient(145deg, #0a0a0a 0%, #111 100%);
     border: 1px solid var(--border);
-    padding: clamp(20px, 4vw, 32px);
-    border-radius: 4px;
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-acquire {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    border: 1px solid var(--dim);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-top: 20px;
     transition: 0.3s;
 }
 
-.card:hover { border-color: rgba(255,255,255,0.2); }
-
-.wide { grid-column: span 2; }
-
-/* Labels & Data Values */
-.label {
-    display: block;
-    font-size: clamp(8px, 1vw, 10px);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--dim);
-    margin-bottom: 24px;
-}
-
-.val { 
-    font-size: clamp(2rem, 6vw, 3.5rem); 
-    font-weight: 700; 
-    letter-spacing: -2px;
+.btn-acquire:hover {
+    border-color: var(--accent);
     color: var(--accent);
 }
 
-.val-sm { font-size: 14px; line-height: 1.6; }
-.unit { color: var(--dim); font-size: 0.5em; margin-left: 4px; }
+/* ==========================================
+   MODAL TERMINAL SYSTEM (CRITICAL)
+   ========================================== */
 
-/* Data Visualization */
-.progress-bg {
-    width: 100%; height: 1px;
-    background: var(--border);
-    margin-top: 25px;
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    backdrop-filter: blur(10px);
 }
 
-.progress-fill {
-    height: 100%; background: var(--accent);
-    transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+.modal.open {
+    opacity: 1;
+    pointer-events: auto;
 }
 
-.status-up { font-size: 10px; color: #4ade80; font-weight: bold; }
+.modal-content {
+    width: 90%;
+    max-width: 500px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: clamp(30px, 5vw, 50px);
+    border-radius: 4px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    transform: scale(0.95);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
-/* Heatmap & Docs Grid - Auto Fit System */
-.heatmap, .docs-grid {
+.modal.open .modal-content {
+    transform: scale(1);
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 40px; height: 40px;
+    border: 2px solid var(--border);
+    border-top: 2px solid var(--accent);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Heatmap Grid */
+.heatmap {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
-.docs-section {
-    border-style: dashed !important;
-    background: transparent !important;
+/* Footer Section */
+footer {
+    padding: 60px 5%;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--dim);
 }
 
-/* ==========================================
-   BREAKPOINTS (Optimized for All Devices)
-   ========================================== */
-
-@media (max-width: 1024px) {
-    .results-grid { grid-template-columns: repeat(2, 1fr); }
-    .wide { grid-column: span 2; }
-}
-
-@media (max-width: 768px) {
-    .navbar { padding: 15px 5%; }
-    .results-grid { grid-template-columns: 1fr; } 
-    .wide { grid-column: span 1; }
-    .hero h1 { letter-spacing: -2px; }
-    input { flex: none; width: 100%; }
-    button { flex: none; width: 100%; }
-}
-
-@media (max-width: 480px) {
-    .container { padding: 30px 0; }
-    .card { padding: 20px; }
-    .val { font-size: 2.2rem; }
-}
-
-@media print {
-    body { background: white; color: black; }
-    .navbar, .search-box { display: none; }
-}
-
-/* ==========================================
-   PREMIUM REVEAL ANIMATION (v1.0.6)
-   ========================================== */
-
+/* Reveal Animation */
 .reveal {
     opacity: 0;
-    filter: blur(5px); /* Kesan premium blur */
-    transform: translateY(20px);
-    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); /* Motion organik */
-    will-change: transform, opacity, filter;
+    filter: blur(10px);
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .reveal.active {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.8rem; }
+    .search-box input, .search-box button { width: 100%; flex: none; }
+    .acquisition-grid { grid-template-columns: 1fr; }
 }
