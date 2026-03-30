@@ -1,58 +1,67 @@
-# 🏛️ WSE FOUNDATION
-> **The Neural Backbone & Predictive Branding Engine of World Smart Eye.**
+# 🏛️ STATE OF PROTOCOL (S.O.P)
+> **The Sovereign Neural Backbone & Asset Intelligence Engine.**
 
-![Performance](https://img.shields.io/badge/RAM-Under_10MB-gold?style=flat-square)
-![Speed](https://img.shields.io/badge/Load_Speed-Instant-green?style=flat-square)
-![Arch](https://img.shields.io/badge/Architecture-Vanilla_JS_/_CSS-black?style=flat-square)
+![Protocol Version](https://img.shields.io/badge/Protocol-v1.0.5--alpha-white?style=flat-square)
+![RAM Optimization](https://img.shields.io/badge/RAM-Under_10MB-4ade80?style=flat-square)
+![Security](https://img.shields.io/badge/Audit-SSL_Grade-blue?style=flat-square)
+![Architecture](https://img.shields.io/badge/Architecture-Vanilla_JS_/_CSS-black?style=flat-square)
 
 ---
 
 ## 💎 The Vision
-**WSE Foundation** adalah protokol teras yang memproses trend global, kecairan aset digital, dan simulasi penjenamaan masa nyata. Diilhamkan oleh estetika **Dune Analytics**, ia menggabungkan ketajaman data dengan reka bentuk "High-Fashion Tech" yang sangat minimalis.
+**State of Protocol (S.O.P)** adalah yayasan teknologi yang menetapkan piawaian kedaulatan digital melalui analisis ramalan (predictive analysis). Diilhamkan oleh estetika sistem perbankan bertaraf tinggi dan *Dune-SIM*, S.O.P berfungsi untuk mengaudit momentum sosial dan kecairan aset digital secara masa nyata tanpa bergantung kepada infrastruktur luaran.
 
 ---
 
 ## ⚡ Core Infrastructure
 
-### 📊 Brand Trigger Simulator
-Modul ramalan (Predictive) yang menganalisis potensi penjenamaan digital:
-*   **Social Velocity:** Kelajuan tular terma dalam ekosistem digital.
-*   **Asset Liquidity:** Anggaran volum pasaran bagi kata kunci (keywords).
-*   **Domain Intelligence:** Status ketersediaan aset .COM secara masa nyata.
+### 📊 The Brand Trigger (Audit Engine)
+Modul simulasi yang menjalankan audit mendalam terhadap konsep penjenamaan:
+* **Social Trend Velocity:** Mengukur kelajuan tular dan momentum neurat sesuatu aset.
+* **Liquidity Index:** Simulasi volum pasaran dan kestabilan aset digital (M-Value).
+* **Identity & Security Audit:** Pengesahan integriti nod dan rating SSL sovereign.
 
 ### 🌐 Global Adoption Heatmap
-Visualisasi geospatial yang memaparkan tahap penerimaan teknologi di seluruh dunia melalui simulasi pemprosesan data regional yang ringan.
+Visualisasi geospatial yang memaparkan tahap penerimaan protokol di seluruh zon regional (N. America, Europe, Asia, Middle East) melalui pemprosesan data ringan.
+
+### 📑 Protocol Documentation (API Specs)
+Menyediakan dokumentasi teknikal "Lightweight API" untuk integrasi luaran:
+* `[ GET ] /api/v1/velocity`
+* `[ POST ] /api/v1/audit`
 
 ---
 
-## 🖥️ Ultra-Lightweight Architecture
+## 🖥️ Engineering Standards: "Zero-Footprint"
 
-Projek ini dibina berasaskan prinsip **"Zero-Bloat Engineering"** untuk prestasi maksimum:
+Projek ini dibina berasaskan prinsip **"Sovereign Engineering"** untuk prestasi dan privasi mutlak:
 
-*   **Engine:** Vanilla JavaScript (ES6+) - Tanpa library luar untuk penggunaan RAM < 10MB.
-*   **Styling:** Pure CSS3 dengan pembolehubah (Variables) & Grid System asli.
-*   **Typography:** System Monospace Stack (UI-Monospace) - Gaya coding yang tajam tanpa bebanan rendering font luar.
-*   **Optimization:** Saiz fail keseluruhan < 10KB untuk kelajuan muat turun "Pantas Kilat".
+* **Engine:** Vanilla JavaScript (ES6+) - Dioptimumkan dengan *Hibernation Logic* (tidur bila tab tidak aktif) untuk menjimatkan RAM.
+* **Zero-Dependency:** 100% kod asli. Tiada Google Fonts, No jQuery, No Tracking Scripts.
+* **Institutional UI:** Menggunakan sistem grid CSS asli dan tipografi *Monospace Stack* untuk ketajaman visual pada semua resolusi.
+* **Speed:** Masa muat turun < 500ms dengan saiz keseluruhan fail yang sangat efisien.
 
 ---
 
 ## 🛠️ Deployment & Access
 
-WSE Foundation direka untuk skalabiliti pantas dan kecekapan sumber tinggi.
+State of Protocol direka untuk skalabiliti pantas dan ketahanan data.
 
-1.  **Quick Launch:** Buka `index.html` pada mana-mana pelayar web moden.
-2.  **Live View:** [shiftcrypto69.github.io/wse-foundation/](https://shiftcrypto69.github.io/wse-foundation/)
-3.  **Modular System:** Kod diasingkan kepada `index.html`, `style.css`, dan `script.js` untuk penyelenggaraan mudah.
+1.  **Direct Execution:** Jalankan `index.html` pada pelayar web moden (Brave/Chrome/Safari).
+2.  **Sovereign Node:** [shiftcrypto69.github.io/state-of-protocol/](https://shiftcrypto69.github.io/state-of-protocol/)
+3.  **Modular Logic:** Struktur fail diasingkan secara sistematik:
+    * `data.js`: Central Data Repository (The Source).
+    * `script.js`: Core Engine & RAM Optimizer.
+    * `style.css`: Visual Identity System.
 
 ---
 
-## 🛡️ Privacy & Zero-Knowledge Audit
-Foundation ini beroperasi sepenuhnya pada *Client-Side*. Semua input pengguna diproses dalam memori lokal dan tidak dihantar ke mana-mana pelayan pihak ketiga, menjamin privasi data 100%.
+## 🛡️ Security & Privacy Manifesto
+S.O.P Foundation beroperasi atas dasar **Zero-Knowledge**. Semua input pengguna diproses secara *client-side* dalam memori volatile dan dipadamkan secara automatik selepas sesi tamat. Tiada data yang dihantar ke pelayan pihak ketiga.
 
 ---
 
 <p align="center">
-  <img src="https://img.shields.io/badge/ARCHITECT-SHIFT__DEV-d4af37?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/AUTHORITY-S.O.P__FOUNDATION-ffffff?style=for-the-badge" />
   <br>
-  <i>"Architecture is the foundation of digital sovereignty."</i>
+  <i>"In an era of chaotic data, we define the Protocol."</i>
 </p>
