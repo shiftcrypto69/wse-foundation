@@ -47,7 +47,7 @@ Projek ini dibina berasaskan prinsip **"Sovereign Engineering"** untuk prestasi 
 State of Protocol direka untuk skalabiliti pantas dan ketahanan data.
 
 1.  **Direct Execution:** Jalankan `index.html` pada pelayar web moden (Brave/Chrome/Safari).
-2.  **Sovereign Node:** [shiftcrypto69.github.io/state-of-protocol/](https://shiftcrypto69.github.io/state-of-protocol/)
+2.  **Sovereign Node:** [https://state-of-protocol.github.io/wse-foundation/](https://state-of-protocol.github.io/wse-foundation/)
 3.  **Modular Logic:** Struktur fail diasingkan secara sistematik:
     * `data.js`: Central Data Repository (The Source).
     * `script.js`: Core Engine & RAM Optimizer.
