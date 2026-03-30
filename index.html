@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STATE OF PROTOCOL // FOUNDATION</title>
-    <!-- Favicon Link -->
-    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- FAVICON CONFIGURATION -->
+    <!-- Standard Favicon untuk Browser Tab -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    
+    <!-- Untuk paparan iPhone/iPad Home Screen -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    
+    <!-- Fail gaya visual -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,7 +43,7 @@
             <button onclick="runAnalysis()" id="btn">Analyze</button>
         </div>
 
-        <!-- Results Display Grid -->
+        <!-- Results Display Grid (Akan muncul selepas klik Analyze) -->
         <div id="results" class="results-grid" style="display: none;">
             
             <div class="card wide">
@@ -62,7 +70,7 @@
             <div class="card wide overflow-hidden">
                 <span class="label">Global Adoption Heatmap</span>
                 <div class="heatmap" id="heatmap">
-                    <!-- Dynamic Regions injected by script.js -->
+                    <!-- Dynamic Regions disuntik oleh script.js -->
                 </div>
             </div>
 
@@ -70,14 +78,14 @@
             <section class="card wide docs-section" style="margin-top: 20px;">
                 <span class="label">Protocol Documentation / v1.0.6-alpha</span>
                 <div class="docs-grid" style="margin-top: 15px;">
-                    <!-- Documentation Item 1 -->
-                    <div class="doc-item" onclick="window.open('https://docs.google.com/document/d/1aSrLBJlDUi6CKiObM6USsmPQecZuq_EUUH-Vk2gzqYc/edit', '_blank')" style="cursor: pointer; transition: 0.3s;">
-                        <h4 style="font-size: 11px; color: var(--accent); letter-spacing: 1px; margin-bottom: 8px;">[ GET ] /api/v1/velocity</h4>
-                        <p style="font-size: 10px; color: var(--dim); line-height: 1.4;">Retrieve real-time social momentum data for neural branding architectures.</p>
+                    <!-- Documentation Item 1 (BM Version) -->
+                    <div class="doc-item" onclick="window.open('https://docs.google.com/document/d/1tC0-UicJ1aSxhouLYz7YzTWHxaajvf4vQvisJ2KfMRk/edit', '_blank')" style="cursor: pointer;">
+                        <h4 style="font-size: 11px; color: var(--accent); letter-spacing: 1px; margin-bottom: 8px;">[ GET ] /api/v1/velocity (BM)</h4>
+                        <p style="font-size: 10px; color: var(--dim); line-height: 1.4;">Data momentum sosial masa nyata untuk senibina penjenamaan neural.</p>
                     </div>
-                    <!-- Documentation Item 2 -->
-                    <div class="doc-item" onclick="window.open('https://docs.google.com/document/d/1tC0-UicJ1aSxhouLYz7YzTWHxaajvf4vQvisJ2KfMRk/edit', '_blank')" style="cursor: pointer; transition: 0.3s;">
-                        <h4 style="font-size: 11px; color: var(--accent); letter-spacing: 1px; margin-bottom: 8px;">[ POST ] /api/v1/audit</h4>
+                    <!-- Documentation Item 2 (EN Version) -->
+                    <div class="doc-item" onclick="window.open('https://docs.google.com/document/d/1aSrLBJlDUi6CKiObM6USsmPQecZuq_EUUH-Vk2gzqYc/edit', '_blank')" style="cursor: pointer;">
+                        <h4 style="font-size: 11px; color: var(--accent); letter-spacing: 1px; margin-bottom: 8px;">[ POST ] /api/v1/audit (EN)</h4>
                         <p style="font-size: 10px; color: var(--dim); line-height: 1.4;">Initialize SSL-Grade security audit for sovereign digital assets.</p>
                     </div>
                 </div>
@@ -118,7 +126,7 @@
         <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 35px; flex-wrap: wrap;">
             <a href="#" style="color: var(--dim); text-decoration: none; font-size: 11px; letter-spacing: 1px; font-weight: bold;">TWITTER / X</a>
             <a href="#" style="color: var(--dim); text-decoration: none; font-size: 11px; letter-spacing: 1px; font-weight: bold;">DISCORD</a>
-            <!-- Updated Whitepaper Link (English version used as primary) -->
+            <!-- Whitepaper Link -->
             <a href="https://docs.google.com/document/d/1aSrLBJlDUi6CKiObM6USsmPQecZuq_EUUH-Vk2gzqYc/edit" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 11px; letter-spacing: 1px; font-weight: bold; border-bottom: 1px solid var(--accent);">WHITEPAPER (EN)</a>
         </div>
 
