@@ -74,7 +74,9 @@ function runAuthentication() {
     btn.disabled = true;
 
     setTimeout(() => {
+        // Aktifkan area keputusan dengan grid-active (untuk trigger CSS animation)
         resultsArea.style.display = 'grid'; 
+        resultsArea.classList.add('grid-active');
         
         // Data Mapping dari WSE_DATABASE
         const db = WSE_DATABASE;
@@ -89,22 +91,23 @@ function runAuthentication() {
         const vol = (Math.random() * 8 + 1).toFixed(1);
         document.getElementById('volVal').innerText = vol + 'M';
 
-        // B. Update Domain Identity Card (DENGAN NAMA COLLAB)
+        // B. Update Domain Identity Card (TERMINAL STYLE)
         const domArea = document.getElementById('domStatus');
         domArea.innerHTML = `
-            <div style="color:var(--accent); font-size:9px; font-weight:900; margin-bottom:10px; letter-spacing:2px">
-                [ DOMAIN_INTELLIGENCE ]
+            <div style="margin-bottom:15px">
+                <span class="label" style="color:var(--accent); margin:0">[ IDENTITY_REPORT ]</span>
             </div>
-            <div style="color:white; font-size:16px; font-weight:bold; margin-bottom:5px; letter-spacing:-0.5px">
-                ${input.toLowerCase()}
+            <h2 style="color:white; margin-bottom:5px; letter-spacing:-1px;">${input.toUpperCase()}</h2>
+            
+            <div style="background:rgba(255,255,255,0.03); padding:12px; border-radius:4px; margin-bottom:15px; border: 1px dashed var(--border)">
+                <span style="color:var(--dim); font-size:10px; text-transform:uppercase; letter-spacing:1px;">Collab_Partner:</span><br>
+                <span style="color:var(--accent); font-size:13px; font-weight:bold; letter-spacing:1px;">> ${randomEntity.name}</span>
             </div>
-            <div style="color:var(--dim); font-size:10px; margin-bottom:15px; font-family:monospace;">
-                COLLAB_REF: <span style="color:var(--accent)">${randomEntity.name}</span>
-            </div>
-            <div style="font-size:10px; color:#666; line-height:1.8; border-top: 1px solid var(--border); padding-top:10px;">
-                REPUTATION : <span style="color:#4ade80; font-weight:bold">HIGH_TRUST</span><br>
-                INTEGRITY  : <span style="color:#fff;">${(randomEntity.integrity * 100).toFixed(0)}%</span><br>
-                S.O.P NODE : <span style="color:#fff; background:rgba(255,255,255,0.1); padding:0 4px;">${status}</span>
+
+            <div style="font-size:10px; color:#888; line-height:2; font-family:monospace;">
+                STATUS    : <span style="color:white">VERIFIED_NODE</span><br>
+                INTEGRITY : <span style="color:white">${(randomEntity.integrity * 100).toFixed(0)}%</span><br>
+                SECURITY  : <span style="color:var(--accent)">${randomEntity.ssl}</span>
             </div>
         `;
 
