@@ -3,42 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WSE // FOUNDATION</title>
-    <!-- CSS Asli (Dune-SIM Style) -->
+    <title>STATE OF PROTOCOL // FOUNDATION</title>
+    <!-- Zero External Requests - All styles in style.css -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Background Glow Effect (Ultra-Light) -->
-    <div class="bg-glow"></div>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar: Institutional Style -->
     <nav class="navbar">
         <div class="nav-brand">
             <div class="dot"></div>
-            <span>WSE FOUNDATION <span class="dim">/ SIM</span></span>
+            <span>STATE OF PROTOCOL <span class="dim">/ FOUNDATION</span></span>
         </div>
     </nav>
 
     <!-- Main Container -->
     <main class="container">
-        <!-- Hero Section -->
+        <!-- Hero Section: Clear & Authoritative -->
         <header class="hero">
-            <h1>THE BRAND <br> <span class="gold">TRIGGER.</span></h1>
-            <p class="subtitle">Real-time predictive analysis for high-velocity digital assets.</p>
+            <h1>THE BRAND <br> <span class="white">TRIGGER.</span></h1>
+            <p class="subtitle">Standardizing neural assets and high-velocity digital identity through sovereign protocols.</p>
         </header>
 
         <!-- Search / Input Engine -->
         <div class="search-box">
-            <input type="text" id="brandInput" placeholder="Enter branding concept..." onkeypress="handleKey(event)" autocomplete="off">
+            <input type="text" id="brandInput" placeholder="Initialize branding concept analysis..." onkeypress="handleKey(event)" autocomplete="off">
             <button onclick="runAnalysis()" id="btn">Run Analysis</button>
         </div>
 
-        <!-- Results Display Grid (Hidden by default) -->
+        <!-- Results Display Grid -->
         <div id="results" class="results-grid" style="display: none;">
             
-            <!-- Card 1: Trend Velocity (Wide) -->
+            <!-- Card 1: Trend Velocity -->
             <div class="card wide">
-                <span class="label">Social Trend Velocity</span>
+                <span class="label">Social Trend Velocity / Real-time</span>
                 <div class="stats">
                     <span class="val" id="trendVal">0</span><span class="unit">%</span>
                 </div>
@@ -49,31 +47,44 @@
 
             <!-- Card 2: Asset Liquidity -->
             <div class="card">
-                <span class="label">Asset Liquidity</span>
+                <span class="label">Liquidity Index</span>
                 <div class="val" id="volVal">0M</div>
-                <span class="status-up">▲ Trending</span>
+                <span class="status-up">▲ STABLE MOMENTUM</span>
             </div>
 
-            <!-- Card 3: Domain & Identity Audit (Smart Data) -->
+            <!-- Card 3: Identity & Security Audit -->
             <div class="card">
-                <span class="label">Identity & Security Audit</span>
-                <div id="domStatus" class="val-sm">Initializing...</div>
+                <span class="label">Identity Audit (SSL/Sovereign)</span>
+                <div id="domStatus" class="val-sm">Awaiting instruction...</div>
             </div>
 
-            <!-- Card 4: Regional Heatmap (Wide) -->
+            <!-- Card 4: Regional Heatmap -->
             <div class="card wide overflow-hidden">
-                <span class="label">Regional Adoption Heatmap</span>
+                <span class="label">Global Adoption Heatmap</span>
                 <div class="heatmap" id="heatmap">
-                    <!-- Kawasan ini akan diisi secara dinamik oleh script.js -->
+                    <!-- JS generated regions -->
                 </div>
             </div>
+
+            <!-- Card 5: Protocol Documentation (High-Value API Specs) -->
+            <section class="card wide docs-section" style="margin-top: 20px;">
+                <span class="label">Protocol Documentation / v1.0.4-alpha</span>
+                <div class="docs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 15px;">
+                    <div class="doc-item">
+                        <h4 style="font-size: 11px; color: var(--accent); letter-spacing: 1px; margin-bottom: 8px;">[ GET ] /api/v1/velocity</h4>
+                        <p style="font-size: 10px; color: var(--dim); line-height: 1.4;">Retrieve real-time social momentum data for neural branding architectures.</p>
+                    </div>
+                    <div class="doc-item">
+                        <h4 style="font-size: 11px; color: var(--accent); letter-spacing: 1px; margin-bottom: 8px;">[ POST ] /api/v1/audit</h4>
+                        <p style="font-size: 10px; color: var(--dim); line-height: 1.4;">Initialize SSL-Grade security audit for sovereign digital assets.</p>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
-    <!-- PANGGILAN DATA & LOGIK (TURUTAN PENTING) -->
-    <!-- 1. Database (data.js) dipanggil dahulu -->
+    <!-- CORE SCRIPTS -->
     <script src="data.js"></script>
-    <!-- 2. Logik Enjin (script.js) dipanggil kemudian -->
     <script src="script.js"></script>
 </body>
 </html>
