@@ -281,7 +281,7 @@ button:disabled {
 
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
-/* Animations */
+/* Animations & Reveal States */
 .reveal {
     opacity: 0;
     transform: translateY(20px);
@@ -299,4 +299,38 @@ button:disabled {
     button { padding: 15px; width: 100%; }
     .hero h1 { font-size: 3rem; }
     .results-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================
+   NEW ADDITIONS: IDENTITY CARD & DYNAMIC UI
+   ========================================== */
+
+/* Penambahbaikan untuk Identity Card (domStatus) */
+#domStatus {
+    position: relative;
+    overflow: hidden;
+    border-left: 3px solid var(--accent); /* Memberi impak visual pada kad identiti */
+}
+
+/* Memastikan COLLAB_REF nampak jelas walaupun font kecil */
+#domStatus span {
+    font-family: ui-monospace, 'Cascadia Code', monospace;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.2);
+}
+
+/* Animasi semasa keputusan muncul melalui JS */
+.results-grid.grid-active {
+    display: grid !important;
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
